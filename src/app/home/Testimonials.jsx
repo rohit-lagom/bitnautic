@@ -35,7 +35,7 @@ const testimonials = [
   },
 ];
 
-export default function TestimonialsSwiper() {
+export default function Testimonials() {
   useEffect(() => {
     new Swiper('.mySwiper', {
       slidesPerView: 1,

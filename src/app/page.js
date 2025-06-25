@@ -1,9 +1,13 @@
+import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import Hero from './home/Hero';
 const Home = () => {
   return (
-    <div>
+          <main id='home' className="relative min-h-screen ">
       <Header />
-    </div>
+      <Hero/>
+      <Footer />
+      </main>
   )
 }
 

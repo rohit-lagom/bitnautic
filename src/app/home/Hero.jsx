@@ -26,7 +26,7 @@ export default function Hero() {
       />
 
       {/* Content Container */}
-      <div className="relative z-10 max-w-7xl mx-auto w-full px-4 sm:px-6 lg:px-8 py-24 sm:py-32 text-center">
+      <div className="relative z-10 max-w-7xl mx-auto w-full px-6 py-24 sm:py-32 text-center">
         {/* Headings and Subtext */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}

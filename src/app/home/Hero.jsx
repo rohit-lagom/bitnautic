@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 lg:pt-24 bg-gradient-to-br from-[#0f172a] via-[#174fa8] to-[#24487a] text-white">
+    <section className="relative lg:min-h-screen flex items-center justify-center overflow-hidden pt-16 lg:pt-24 bg-gradient-to-br from-[#0f172a] via-[#174fa8] to-[#24487a] text-white">
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_35%,rgba(59,130,246,0.1)_35%,rgba(59,130,246,0.1)_65%,transparent_65%),linear-gradient(-45deg,transparent_35%,rgba(30,64,175,0.1)_35%,rgba(30,64,175,0.1)_65%,transparent_65%)] bg-[length:20px_20px] opacity-30 z-0" />
 
       <motion.div

@@ -3,6 +3,7 @@ import Header from '@/components/Header';
 import Hero from './home/Hero';
 import Stats from './home/Stats';
 import Services from './home/Services';
+import About from './home/About';
 const Home = () => {
   return (
           <main id='home' className="relative min-h-screen ">
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero/>
       <Stats/>
       <Services/>
+      <About/>
       <Footer />
       </main>
   )

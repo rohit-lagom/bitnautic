@@ -26,8 +26,10 @@ export default function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 my-4 mx-auto max-w-7xl rounded-2xl  transition-all duration-500 ${
-        scrolled ? 'glass-card shadow-lg' : 'glass-navy'
+      className={`fixed top-0 left-0 right-0 z-50 my-4 mx-auto max-w-7xl rounded-2xl transition-all duration-500 ${
+        scrolled
+          ? 'bg-white/90 backdrop-blur-xl border border-white/40 shadow-lg'
+          : 'bg-blue-900/90 backdrop-blur-xl border border-blue-300/40 shadow-md'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -37,7 +39,7 @@ export default function Header() {
               <img
                 src="https://bitnautic.com/assets/images/Bitlogo/White.png"
                 alt="BitNautic Logo"
-                className={`h-8 w-auto transition-all duration-300 ${
+                className={`h-10 w-auto transition-all duration-300 ${
                   scrolled ? 'brightness-0 saturate-100' : 'brightness-100'
                 }`}
               />
@@ -63,7 +65,7 @@ export default function Header() {
               className={`ml-4 px-6 py-2.5 rounded-xl font-semibold transition-all duration-300 shadow-lg ${
                 scrolled
                   ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white hover:from-blue-700 hover:to-blue-800'
-                  : 'glass-white text-white hover:bg-white/20'
+                  : 'bg-white/20 border border-white/30 backdrop-blur-md text-white hover:bg-white/30'
               }`}
             >
               Request Demo
@@ -82,7 +84,7 @@ export default function Header() {
       </div>
 
       {isOpen && (
-        <div className="lg:hidden glass-navy border-t border-blue-400/20">
+        <div className="lg:hidden bg-blue-900/90 backdrop-blur-xl border-t border-blue-400/20">
           <div className="max-w-7xl mx-auto px-4 py-6 space-y-2">
             {navItems.map((item) => (
               <Link
@@ -97,7 +99,7 @@ export default function Header() {
             <div className="pt-4">
               <Link
                 href="/contact"
-                className="block glass-white text-white px-4 py-3 rounded-xl font-semibold text-center hover:bg-white/20 transition-all duration-300 shadow-lg"
+                className="block bg-white/20 border border-white/30 backdrop-blur-md text-white px-4 py-3 rounded-xl font-semibold text-center hover:bg-white/30 transition-all duration-300 shadow-lg"
                 onClick={() => setIsOpen(false)}
               >
                 Request Demo

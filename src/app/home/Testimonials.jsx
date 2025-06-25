@@ -89,7 +89,7 @@ export default function Testimonials() {
         <div className="swiper mySwiper">
           <div className="swiper-wrapper pb-12">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="swiper-slide px-2 flex justify-center h-full">
+              <div key={index} className="swiper-slide px-2 p-2 flex justify-center h-full">
                 <div className="glass-card bg-white/20 backdrop-blur-lg border border-white/30 rounded-2xl p-6 shadow-md w-full max-w-md flex flex-col justify-between transition-all duration-300 ease-in-out transform hover:shadow-xl hover:scale-[1.02] hover:border-blue-500 group h-full">
                   <div>
                     <div className="flex items-center gap-2 text-amber-500 mb-4">

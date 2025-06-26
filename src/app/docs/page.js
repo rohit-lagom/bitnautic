@@ -5,6 +5,7 @@ import About from "./About";
 import DocsList from "./DocsList";
 import Features from "./Features";
 import Benefits from "./Benefits";
+import Coverage from "./Coverage";
 
 export default function Docs() {
   return (
@@ -15,6 +16,7 @@ export default function Docs() {
       <DocsList/>
       <Features/>
       <Benefits/>
+      <Coverage/>
       <Footer />
     </section>
   );

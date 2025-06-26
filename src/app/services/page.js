@@ -2,6 +2,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Hero from "./Hero";
 import Solutions from "./Solutions";
+import Documents from "./Documents";
 
 export default function Services() {
   return (
@@ -9,6 +10,7 @@ export default function Services() {
       <Header />
       <Hero />
       <Solutions/>
+      <Documents/>
       <Footer />
     </section>
   );

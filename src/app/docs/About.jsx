@@ -48,12 +48,14 @@ export default function About() {
               ))}
             </div>
 
-            <Link
-              href="#documents"
-              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold text-lg transition hover:scale-105 shadow-lg"
-            >
-              Explore BTNT Docs <ArrowRight className="ml-2 h-5 w-5" />
-            </Link>
+         <Link
+  href="#documents"
+  className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white text-lg backdrop-blur-md bg-white/10 border border-white/20 hover:bg-white/20 transition-all duration-300 hover:scale-105 shadow-md"
+>
+  <span>Explore BTNT Docs</span>
+  <ArrowRight className="h-5 w-5" />
+</Link>
+
           </motion.div>
 
           {/* Image Panel */}
@@ -73,8 +75,8 @@ export default function About() {
             </div>
 
             {/* Floating Badge */}
-            <div className="absolute -bottom-10 -left-10 bg-blue-600/80 text-white px-6 py-4 rounded-2xl shadow-xl backdrop-blur-md border border-white/10">
-              <Award className="h-8 w-8 mb-1" />
+            <div className="absolute bottom-6 left-6 bg-white/10 backdrop-blur-lg text-white px-5 py-4 rounded-2xl shadow-xl border border-white/10 animate-float">
+              <Award className="h-6 w-6 text-blue-300 mb-2" />
               <p className="text-sm font-semibold">Verified & Compliant</p>
             </div>
           </motion.div>

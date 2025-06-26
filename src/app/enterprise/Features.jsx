@@ -37,24 +37,29 @@ export default function Features() {
   ];
 
   return (
-    <section className="py-20 bg-gray-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white relative overflow-hidden">
+      {/* Optional blur ambient */}
+      <div className="absolute -top-20 -left-20 w-96 h-96 bg-white/10 rounded-full blur-3xl opacity-10" />
+      <div className="absolute top-10 right-10 w-80 h-80 bg-blue-400/10 rounded-full blur-2xl opacity-10" />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-2 block">
+          <span className="text-blue-300 font-semibold text-sm uppercase tracking-wide mb-2 block">
             Enterprise Features
           </span>
-          <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-white mb-6">
             Powerful Tools for Modern Business
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-blue-100 max-w-3xl mx-auto">
             Comprehensive enterprise solutions designed to transform your supply chain operations
           </p>
         </motion.div>
+
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           {features.map((feature, index) => (
             <motion.div
@@ -62,13 +67,13 @@ export default function Features() {
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
+              className="group bg-white/10 backdrop-blur-2xl border border-white/10 rounded-2xl p-8 shadow-xl hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2"
             >
-              <div className="w-16 h-16 bg-blue-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
-                <feature.icon className="h-8 w-8 text-blue-600 group-hover:text-white transition-colors duration-300" />
+              <div className="w-16 h-16 bg-white/10 border border-white/10 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-blue-600 transition-colors duration-300">
+                <feature.icon className="h-8 w-8 text-white group-hover:text-white transition-colors duration-300" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <h3 className="text-xl font-bold text-white mb-4">{feature.title}</h3>
+              <p className="text-blue-100 leading-relaxed">{feature.description}</p>
             </motion.div>
           ))}
         </div>

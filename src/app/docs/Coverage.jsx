@@ -10,8 +10,8 @@ import {
 
 export default function Coverage() {
     return (
-         <section className="py-20 bg-blue-600 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800"></div>
+         <section className="py-20  bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-800 to-blue-800"></div>
         <div className="absolute inset-0 shipping-pattern opacity-20"></div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

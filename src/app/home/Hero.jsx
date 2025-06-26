@@ -23,10 +23,11 @@ export default function Hero() {
       ))}
 
       {[
-      { className: 'sm:top-[16%] top-[22%] left-[6%] sm:left-[10%] md:left-[14%] lg:left-32', delay: 0, y: -30, x: 15, rotate: 5 },
-{ className: 'top-[20%] right-[6%] sm:right-[10%] md:right-[14%] lg:right-28', delay: 2, y: -25, x: -12, rotate: -3 },
+      { className: 'sm:top-[16%] top-[26%] left-[6%] sm:left-[10%] md:left-[4%] lg:left-32', delay: 0, y: -30, x: 15, rotate: 5 },
+{ className: 'sm:top-[20%] top-[36%] right-[4%] sm:right-[10%] md:right-[4%] lg:right-28', delay: 2, y: -25, x: -12, rotate: -3 },
 { className: 'bottom-[22%] left-[8%] sm:left-[10%] md:left-[14%] lg:left-24', delay: 4, y: -20, x: 10, rotate: 4 },
 { className: 'bottom-[18%] right-[6%] sm:right-[10%] md:right-[14%] lg:right-32', delay: 1, y: -35, x: -8, rotate: -2 },
+{ className: 'bottom-[4%] right-[48%] sm:right-[48%] md:right-[48%] lg:right-[48%] lg:hidden', delay: 1, y: -35, x: -8, rotate: -2 },
    ].map((icon, idx) => (
         <motion.div
           key={idx}
@@ -46,8 +47,8 @@ export default function Hero() {
 
       {/* Anchors */}
       {[
-       { className: 'top-[58%] left-4 sm:left-10 md:left-14 lg:left-16', delay: 3, rotate: 10 },
-{ className: 'top-[28%] right-4 sm:right-10 md:right-14 lg:right-16', delay: 5, rotate: -8 },
+        { className: 'top-[28%] md:top-[30%] right-4 sm:right-10 md:right-4 lg:right-30', delay: 5, rotate: -8 },
+       { className: 'top-[58%] md:top-[68%] lg:top-[50%] left-4 sm:left-10 md:left-14 lg:left-16', delay: 3, rotate: 10 },
  ].map((icon, idx) => (
         <motion.div
           key={idx}
@@ -88,7 +89,7 @@ export default function Hero() {
           transition={{ duration: 1 }}
           className="space-y-6 sm:space-y-8 mb-12"
         >
-          <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
+          <h1 className="text-3xl sm:text-5xl lg:pt-4 md:text-6xl lg:text-7xl font-bold leading-tight tracking-tight">
             <span className="block">Digital Transformation for</span>
             <span className="block bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mt-2">
               Supply Chain Management
@@ -109,7 +110,7 @@ export default function Hero() {
           initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
           animate={{ scale: 1, rotate: 0, opacity: 1 }}
           transition={{ duration: 1.2, ease: 'easeOut', delay: 0.3 }}
-          className="relative mx-auto w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 flex items-center justify-center rounded-full"
+          className="relative mx-auto w-48 h-48 sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-96 lg:h-96 flex items-center justify-center rounded-full"
         >
           <div className="absolute inset-0 flex items-center justify-center z-0">
             <span className="absolute animate-ping-slow w-full h-full rounded-full bg-blue-400/10 border border-blue-400/20" />
@@ -117,7 +118,7 @@ export default function Hero() {
             <span className="absolute animate-ping-slowest w-3/5 h-3/5 rounded-full bg-blue-200/10 border border-blue-200/20" />
           </div>
 
-          <div className="relative w-36 h-36 sm:w-44 sm:h-44 md:w-52 md:h-52 rounded-full p-3 shadow-2xl bg-white/20 backdrop-blur-3xl border-2 border-white/40 animate-wave z-10">
+          <div className="relative w-48 h-48 sm:w-44 sm:h-44 md:w-72 md:h-72 rounded-full p-3 shadow-2xl bg-white/20 backdrop-blur-3xl border-2 border-white/40 animate-wave z-10">
             <Image
               src="/assets/logo/Logo.png"
               alt="BitNautic Logo"

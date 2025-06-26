@@ -1,218 +1,87 @@
 'use client';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import {  Ship,
-  Anchor} from 'lucide-react';
+import { Ship, Anchor } from 'lucide-react';
+
 
 export default function Hero() {
   return (
     <section className="relative flex items-center justify-center bg-gradient-to-br from-[#0f172a] via-[#174fa8] to-[#24487a] text-white overflow-hidden lg:min-h-screen">
       <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_35%,rgba(59,130,246,0.1)_35%,rgba(59,130,246,0.1)_65%,transparent_65%),linear-gradient(-45deg,transparent_35%,rgba(30,64,175,0.1)_35%,rgba(30,64,175,0.1)_65%,transparent_65%)] bg-[length:20px_20px] opacity-30 z-0" />
 
-      <motion.div
-        className="absolute top-20 left-6 sm:left-10 w-14 h-14 sm:w-20 sm:h-20 rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-lg"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute top-40 right-6 sm:right-10 w-20 h-20 sm:w-28 sm:h-28 rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-lg"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 3, delay: 1, repeat: Infinity, ease: 'easeInOut' }}
-      />
-      <motion.div
-        className="absolute bottom-24 left-1/4 w-10 h-10 sm:w-16 sm:h-16 rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-lg"
-        animate={{ y: [0, -10, 0] }}
-        transition={{ duration: 3, delay: 2, repeat: Infinity, ease: 'easeInOut' }}
-      />
-         {/* Floating Ship Icons - Large Ships */}
+      {[
+        { top: 'top-[5%]', left: 'left-[5%]', delay: 0 },
+        { top: 'top-[15%]', right: 'right-[5%]', delay: 1 },
+        { bottom: 'bottom-[20%]', left: 'left-1/4', delay: 2 },
+      ].map((pos, idx) => (
         <motion.div
-          animate={{ 
-            y: [0, -30, 0],
-            x: [0, 15, 0],
-            rotate: [0, 5, 0]
+          key={idx}
+          className={`absolute w-10 h-10 sm:w-14 sm:h-14 rounded-full bg-white/5 backdrop-blur-md border border-white/15 shadow-lg ${pos.top || ''} ${pos.bottom || ''} ${pos.left || ''} ${pos.right || ''} pointer-events-none z-[1]`}
+          animate={{ y: [0, -10, 0] }}
+          transition={{ duration: 3, repeat: Infinity, delay: pos.delay, ease: 'easeInOut' }}
+        />
+      ))}
+
+      {[
+      { className: 'sm:top-[16%] top-[22%] left-[6%] sm:left-[10%] md:left-[14%] lg:left-32', delay: 0, y: -30, x: 15, rotate: 5 },
+{ className: 'top-[20%] right-[6%] sm:right-[10%] md:right-[14%] lg:right-28', delay: 2, y: -25, x: -12, rotate: -3 },
+{ className: 'bottom-[22%] left-[8%] sm:left-[10%] md:left-[14%] lg:left-24', delay: 4, y: -20, x: 10, rotate: 4 },
+{ className: 'bottom-[18%] right-[6%] sm:right-[10%] md:right-[14%] lg:right-32', delay: 1, y: -35, x: -8, rotate: -2 },
+   ].map((icon, idx) => (
+        <motion.div
+          key={idx}
+          animate={{
+            y: [0, icon.y, 0],
+            x: [0, icon.x, 0],
+            rotate: [0, icon.rotate, 0],
           }}
-          transition={{ 
-            duration: 8, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 0
-          }}
-          className="absolute top-20 left-20 lg:left-32"
+          transition={{ duration: 6 + idx, repeat: Infinity, ease: 'easeInOut', delay: icon.delay }}
+          className={`absolute ${icon.className} pointer-events-none z-[1]`}
         >
-          <div className="w-16 h-16 lg:w-20 lg:h-20 glass-white rounded-2xl flex items-center justify-center shadow-2xl">
-            <Ship className="h-8 w-8 lg:h-10 lg:w-10 text-white" />
+          <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 glass-white rounded-2xl flex items-center justify-center shadow-2xl">
+            <Ship className="h-6 w-6 sm:h-8 sm:w-8 text-white" />
           </div>
         </motion.div>
+      ))}
 
+      {/* Anchors */}
+      {[
+       { className: 'top-[58%] left-4 sm:left-10 md:left-14 lg:left-16', delay: 3, rotate: 10 },
+{ className: 'top-[28%] right-4 sm:right-10 md:right-14 lg:right-16', delay: 5, rotate: -8 },
+ ].map((icon, idx) => (
         <motion.div
-          animate={{ 
-            y: [0, -25, 0],
-            x: [0, -12, 0],
-            rotate: [0, -3, 0]
-          }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 2
-          }}
-          className="absolute top-32 right-16 lg:right-28"
+          key={idx}
+          animate={{ y: [0, -18, 0], rotate: [0, icon.rotate, 0] }}
+          transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut', delay: icon.delay }}
+          className={`absolute ${icon.className} pointer-events-none z-[1]`}
         >
-          <div className="w-14 h-14 lg:w-18 lg:h-18 glass-white rounded-2xl flex items-center justify-center shadow-2xl">
-            <Ship className="h-7 w-7 lg:h-9 lg:w-9 text-white" />
+          <div className="w-10 h-10 sm:w-12 sm:h-12 glass-blue rounded-xl flex items-center justify-center shadow-lg">
+            <Anchor className="h-5 w-5 sm:h-6 sm:w-6 text-blue-600" />
           </div>
         </motion.div>
+      ))}
 
+      {/* Small Ships */}
+      {[
+      { className: 'top-[26%] hidden md:block left-[22%] sm:left-[25%] md:left-[28%]', delay: 1.5, x: 8 },
+{ className: 'top-[32%] hidden md:block right-[22%] sm:right-[25%] md:right-[28%]', delay: 3.5, x: -6 },
+{ className: 'bottom-[32%] hidden md:block left-[25%] sm:left-[28%] md:left-[30%]', delay: 2.5, x: 5 },
+{ className: 'bottom-[24%] hidden md:block right-[25%] sm:right-[28%] md:right-[30%]', delay: 4.5, x: -4 },
+].map((icon, idx) => (
         <motion.div
-          animate={{ 
-            y: [0, -20, 0],
-            x: [0, 10, 0],
-            rotate: [0, 4, 0]
-          }}
-          transition={{ 
-            duration: 9, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 4
-          }}
-          className="absolute bottom-40 left-16 lg:left-24"
+          key={idx}
+          animate={{ y: [0, -12, 0], x: [0, icon.x, 0] }}
+          transition={{ duration: 5 + idx, repeat: Infinity, ease: 'easeInOut', delay: icon.delay }}
+          className={`absolute ${icon.className} pointer-events-none z-[1]`}
         >
-          <div className="w-12 h-12 lg:w-16 lg:h-16 glass-white rounded-2xl flex items-center justify-center shadow-2xl">
-            <Ship className="h-6 w-6 lg:h-8 lg:w-8 text-white" />
+          <div className="w-8 h-8 sm:w-10 sm:h-10 glass-subtle rounded-lg flex items-center justify-center">
+            <Ship className="h-4 w-4 sm:h-5 sm:w-5 text-white/80" />
           </div>
         </motion.div>
+      ))}
 
-        <motion.div
-          animate={{ 
-            y: [0, -35, 0],
-            x: [0, -8, 0],
-            rotate: [0, -2, 0]
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 1
-          }}
-          className="absolute bottom-32 right-20 lg:right-32"
-        >
-          <div className="w-14 h-14 lg:w-18 lg:h-18 glass-white rounded-2xl flex items-center justify-center shadow-2xl">
-            <Ship className="h-7 w-7 lg:h-9 lg:w-9 text-white" />
-          </div>
-        </motion.div>
-
-        {/* Floating Anchor Icons */}
-        <motion.div
-          animate={{ 
-            y: [0, -15, 0],
-            rotate: [0, 10, 0]
-          }}
-          transition={{ 
-            duration: 5, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 3
-          }}
-          className="absolute top-1/2 left-8 lg:left-16"
-        >
-          <div className="w-10 h-10 lg:w-12 lg:h-12 glass-blue rounded-xl flex items-center justify-center shadow-lg">
-            <Anchor className="h-5 w-5 lg:h-6 lg:w-6 text-blue-600" />
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ 
-            y: [0, -18, 0],
-            rotate: [0, -8, 0]
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 5
-          }}
-          className="absolute top-1/3 right-8 lg:right-16"
-        >
-          <div className="w-10 h-10 lg:w-12 lg:h-12 glass-blue rounded-xl flex items-center justify-center shadow-lg">
-            <Anchor className="h-5 w-5 lg:h-6 lg:w-6 text-blue-600" />
-          </div>
-        </motion.div>
-
-        {/* Small Floating Ships */}
-        <motion.div
-          animate={{ 
-            y: [0, -12, 0],
-            x: [0, 8, 0]
-          }}
-          transition={{ 
-            duration: 4, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 1.5
-          }}
-          className="absolute top-1/4 left-1/4"
-        >
-          <div className="w-8 h-8 lg:w-10 lg:h-10 glass-subtle rounded-lg flex items-center justify-center">
-            <Ship className="h-4 w-4 lg:h-5 lg:w-5 text-white/80" />
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ 
-            y: [0, -10, 0],
-            x: [0, -6, 0]
-          }}
-          transition={{ 
-            duration: 5, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 3.5
-          }}
-          className="absolute top-1/3 right-1/4"
-        >
-          <div className="w-8 h-8 lg:w-10 lg:h-10 glass-subtle rounded-lg flex items-center justify-center">
-            <Ship className="h-4 w-4 lg:h-5 lg:w-5 text-white/80" />
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ 
-            y: [0, -14, 0],
-            x: [0, 5, 0]
-          }}
-          transition={{ 
-            duration: 7, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 2.5
-          }}
-          className="absolute bottom-1/3 left-1/3"
-        >
-          <div className="w-8 h-8 lg:w-10 lg:h-10 glass-subtle rounded-lg flex items-center justify-center">
-            <Ship className="h-4 w-4 lg:h-5 lg:w-5 text-white/80" />
-          </div>
-        </motion.div>
-
-        <motion.div
-          animate={{ 
-            y: [0, -16, 0],
-            x: [0, -4, 0]
-          }}
-          transition={{ 
-            duration: 6, 
-            repeat: Infinity, 
-            ease: "easeInOut",
-            delay: 4.5
-          }}
-          className="absolute bottom-1/4 right-1/3"
-        >
-          <div className="w-8 h-8 lg:w-10 lg:h-10 glass-subtle rounded-lg flex items-center justify-center">
-            <Ship className="h-4 w-4 lg:h-5 lg:w-5 text-white/80" />
-          </div>
-        </motion.div>
-
-      <div id="hero-content"
-      className="relative z-10 max-w-7xl mx-auto w-full px-6 py-24 lg:py-36 sm:py-32 md:py-34 text-center">
+      {/* Main Content */}
+      <div id="hero-content" className="relative z-10 max-w-7xl mx-auto w-full px-6 py-24 lg:py-36 sm:py-32 md:py-34 text-center">
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
@@ -235,6 +104,7 @@ export default function Hero() {
           </motion.p>
         </motion.div>
 
+        {/* Animated Logo */}
         <motion.div
           initial={{ scale: 0.8, rotate: -5, opacity: 0 }}
           animate={{ scale: 1, rotate: 0, opacity: 1 }}

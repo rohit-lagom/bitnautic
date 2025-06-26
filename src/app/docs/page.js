@@ -3,6 +3,7 @@ import Footer from "@/components/Footer";
 import Hero from "./Hero";
 import About from "./About";
 import DocsList from "./DocsList";
+import Features from "./Features";
 
 export default function Docs() {
   return (
@@ -11,6 +12,7 @@ export default function Docs() {
       <Hero />
       <About/>
       <DocsList/>
+      <Features/>
       <Footer />
     </section>
   );

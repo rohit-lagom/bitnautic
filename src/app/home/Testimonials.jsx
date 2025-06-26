@@ -59,7 +59,7 @@ export default function Testimonials() {
   }, []);
 
   return (
-    <section className="py-24 bg-gradient-to-br from-white via-blue-50 to-blue-100">
+    <section className="py-24 bg-gradient-to-br from-blue-100 via-blue-50 to-blue-100">
       <style jsx>{`
         .swiper-pagination-bullet {
           width: 16px !important;
@@ -87,10 +87,10 @@ export default function Testimonials() {
         </div>
 
         <div className="swiper mySwiper">
-          <div className="swiper-wrapper pb-12">
+          <div className="swiper-wrapper py-6">
             {testimonials.map((testimonial, index) => (
               <div key={index} className="swiper-slide px-2 p-2 flex justify-center h-full">
-                <div className="glass-card bg-white/20 backdrop-blur-lg border border-white/30 rounded-2xl p-6 shadow-md w-full max-w-md flex flex-col justify-between transition-all duration-300 ease-in-out transform hover:shadow-xl hover:scale-[1.02] hover:border-blue-500 group h-full">
+                <div className="backdrop-blur-2xl bg-white/10  border border-white/70 rounded-2xl p-6 shadow-md w-full max-w-md flex flex-col justify-between transition-all duration-300 ease-in-out transform hover:shadow-xl hover:scale-[1.02] hover:border-blue-500 group h-full">
                   <div>
                     <div className="flex items-center gap-2 text-amber-500 mb-4">
                       <svg className="w-5 h-5" viewBox="0 0 18 17" fill="none" xmlns="http://www.w3.org/2000/svg">

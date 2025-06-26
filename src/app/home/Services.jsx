@@ -43,7 +43,7 @@ export default function ServicesSection() {
   ];
 
   return (
-    <section className="py-20 bg-white">
+    <section className="py-20 bg-gradient-to-br from-blue-200 via-blue-50 to-blue-100">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

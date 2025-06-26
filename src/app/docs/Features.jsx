@@ -2,12 +2,9 @@
 
 import { motion } from 'framer-motion';
 import { 
-
   QrCode,
   Shield,
-
   BarChart3,
-
 } from 'lucide-react';
 
 export default function Features() {

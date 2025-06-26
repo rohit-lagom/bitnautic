@@ -7,7 +7,6 @@ import {
   BookOpen,
   FileCheck2,
   Receipt,
-  FileSearch,
 } from 'lucide-react';
 
 export default function Documents() {
@@ -21,37 +20,42 @@ export default function Documents() {
   ];
 
   return (
-    <section className="py-20 bg-gradient-to-br from-white via-slate-100 to-white">
+    <section className="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white">
       <div className="max-w-7xl mx-auto px-6">
+        {/* Heading */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Supported Document Types
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-            Comprehensive document management for all your shipping and logistics needs
+          <h2 className="text-4xl lg:text-5xl font-bold mb-4">Supported Document Types</h2>
+          <p className="text-lg text-blue-200 max-w-3xl mx-auto">
+            Comprehensive blockchain documentation for secure and efficient shipping operations.
           </p>
         </motion.div>
 
+        {/* Cards */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
           {documentTypes.map((doc, index) => (
             <motion.div
               key={doc.name}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: index * 0.1 }}
-              className="group relative bg-white/10 backdrop-blur-xl border border-white/20 rounded-2xl p-6 text-center transition-all duration-300 transform hover:-translate-y-2 shadow-xl hover:shadow-2xl hover:border-blue-500 hover:ring-2 hover:ring-blue-400/50 overflow-hidden"
+              transition={{ duration: 0.6, delay: index * 0.1 }}
+              className="group relative rounded-2xl p-6 text-center bg-white/5 backdrop-blur-xl border border-white/10 transition-all duration-300 hover:-translate-y-2 hover:shadow-[0_20px_60px_rgba(59,130,246,0.2)]"
             >
-              <div className="absolute inset-0 bg-white/5 backdrop-blur-md rounded-2xl z-0 pointer-events-none"></div>
+              {/* Glass overlay */}
+              <div className="absolute inset-0 bg-white/5 backdrop-blur-xl rounded-2xl z-0 pointer-events-none" />
+              
               <div className="relative z-10">
-                <div className="w-16 h-16 bg-white/20 backdrop-blur-lg border border-white/20 rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:bg-blue-600 transition-colors duration-300 shadow-lg">
-                  <doc.icon className="h-8 w-8 text-gray-700 group-hover:text-white transition-colors duration-300" />
+                {/* Icon container */}
+                <div className="w-16 h-16 mx-auto mb-4 bg-white/10 border border-white/20 rounded-2xl flex items-center justify-center shadow-lg group-hover:bg-blue-600 transition-colors duration-300">
+                  <doc.icon className="h-8 w-8 text-white group-hover:text-white" />
                 </div>
-                <h3 className="font-bold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+
+                {/* Title */}
+                <h3 className="text-white font-semibold group-hover:text-blue-300 transition-colors duration-300">
                   {doc.name}
                 </h3>
               </div>

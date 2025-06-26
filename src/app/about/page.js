@@ -6,7 +6,7 @@ import Team from "./Team";
 
 export default function About() {
   return (
-    <section className="relative min-h-screen ">
+    <section className="relative min-h-screen overflow-x-clip">
       <Header/>  
       <Hero/>    
       <Mission/> 

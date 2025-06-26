@@ -5,7 +5,7 @@ const Mission = () => {
   return (
       
       <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
@@ -18,10 +18,10 @@ const Mission = () => {
                 alt="Blockchain technology"
                 className="w-full h-96 object-cover rounded-2xl shadow-2xl"
               />
-              <div className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-6 rounded-xl shadow-2xl">
+              {/* <div className="absolute -bottom-8 -right-8 bg-blue-600 text-white p-6 rounded-xl shadow-2xl">
                 <Target className="h-8 w-8 mb-2" />
                 <div className="text-sm font-semibold">Mission Driven</div>
-              </div>
+              </div> */}
             </motion.div>
 
             <motion.div

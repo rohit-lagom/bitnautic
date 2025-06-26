@@ -27,7 +27,7 @@ export default function Hero() {
 { className: 'sm:top-[20%] top-[36%] right-[4%] sm:right-[10%] md:right-[4%] lg:right-28', delay: 2, y: -25, x: -12, rotate: -3 },
 { className: 'bottom-[22%] left-[8%] sm:left-[10%] md:left-[14%] lg:left-24', delay: 4, y: -20, x: 10, rotate: 4 },
 { className: 'bottom-[18%] right-[6%] sm:right-[10%] md:right-[14%] lg:right-32', delay: 1, y: -35, x: -8, rotate: -2 },
-{ className: 'bottom-[4%] right-[48%] sm:right-[48%] md:right-[48%] lg:right-[48%] lg:hidden', delay: 1, y: -35, x: -8, rotate: -2 },
+{ className: 'bottom-[4%] right-[48%] sm:right-[48%] md:right-[48%] lg:right-[48%] md:block hidden lg:hidden', delay: 1, y: -35, x: -8, rotate: -2 },
    ].map((icon, idx) => (
         <motion.div
           key={idx}

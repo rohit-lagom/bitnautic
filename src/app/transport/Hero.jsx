@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="relative bg-gradient-to-br from-blue-900 via-blue-800 to-blue-700 text-white overflow-hidden">
       <div className="absolute inset-0 shipping-pattern opacity-20"></div>
-        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 sm:py-32 md:py-34 lg:py-40 text-center">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 py-24 sm:py-32 md:py-34 lg:py-40 ">
         <div className="text-center mb-12">
           <motion.div
             initial={{ opacity: 0, y: 50 }}

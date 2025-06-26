@@ -17,8 +17,8 @@ export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="absolute top-4 z-50 w-full">
-      <div className="mx-4 lg:mx-auto max-w-7xl rounded-2xl bg-blue-900/80 backdrop-blur-xl border border-blue-300/40 shadow-md transition-all duration-500">
+    <header className="absolute z-50 w-full">
+      <div className="mx-4 lg:mx-auto max-w-7xl lg:mt-8 md:mt-6 sm:mt-4 mt-4  rounded-2xl bg-blue-900/80 backdrop-blur-xl border border-blue-300/40 shadow-md transition-all duration-500">
         <div className="flex justify-between items-center h-16 lg:h-20 px-6">
           <Link href="/" className="relative z-10 flex items-center space-x-3">
             <Image

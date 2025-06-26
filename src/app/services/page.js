@@ -5,6 +5,7 @@ import Solutions from "./Solutions";
 import Documents from "./Documents";
 import Benefits from "./Benefits";
 import Dashboard from "./Dashboard";
+import CTA from "./CTA";
 
 export default function Services() {
   return (
@@ -15,6 +16,7 @@ export default function Services() {
       <Documents/>
       <Benefits/>
       <Dashboard/>
+      <CTA/>
       <Footer />
     </section>
   );

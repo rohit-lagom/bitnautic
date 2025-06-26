@@ -1,85 +1,85 @@
 'use client';
+
 import { motion } from 'framer-motion';
 import Link from 'next/link';
-import { 
-  ArrowRight,
-  CheckCircle,
-  Award
-} from 'lucide-react';
+import { ArrowRight, CheckCircle, Award } from 'lucide-react';
 
 export default function About() {
-    return (
-      <section className="py-20 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-6">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="space-y-8"
+  return (
+    <section className="relative z-10 py-28 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white overflow-hidden">
+      {/* Ambient background blobs */}
+      <div className="absolute -top-40 -left-32 w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[160px]" />
+      <div className="absolute top-20 right-0 w-[300px] h-[300px] bg-indigo-600/10 rounded-full blur-[120px]" />
+
+      <div className="max-w-7xl mx-auto px-6">
+        <div className="grid lg:grid-cols-2 gap-20 items-center">
+          {/* Content Panel */}
+          <motion.div
+            initial={{ opacity: 0, x: -40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative z-10 p-10 rounded-3xl backdrop-blur-2xl bg-white/5 border border-white/10 shadow-2xl"
+          >
+            <p className="text-blue-300 text-sm font-semibold uppercase tracking-wider mb-2">
+              We Are BitNautic
+            </p>
+            <h2 className="text-4xl lg:text-5xl font-bold mb-3">
+              Elevate Your Productivity
+            </h2>
+            <h3 className="text-xl text-blue-300 font-medium mb-6">
+              with Secure, Smart Documentation
+            </h3>
+
+            <p className="text-white/80 text-lg mb-6 leading-relaxed">
+              BTNT Docs enables enterprises to create, manage, and verify tamper-proof documents with embedded QR codes and blockchain trust — instantly.
+            </p>
+
+            <div className="space-y-3 mb-8">
+              {[
+                'Blockchain-secured documents',
+                'QR code enabled access',
+                'Real-time collaboration',
+                'Automated smart workflows',
+              ].map((text, i) => (
+                <div key={i} className="flex items-center space-x-3">
+                  <CheckCircle className="w-5 h-5 text-green-400" />
+                  <span className="text-white/90">{text}</span>
+                </div>
+              ))}
+            </div>
+
+            <Link
+              href="#documents"
+              className="inline-flex items-center px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-xl text-white font-semibold text-lg transition hover:scale-105 shadow-lg"
             >
-              <div>
-                <span className="text-blue-600 font-semibold text-sm uppercase tracking-wide mb-2 block">
-                  WE ARE BitNautic
-                </span>
-                <h2 className="text-3xl lg:text-5xl font-bold text-gray-900 mb-6">
-                  Boost Your Productivity and Save Time
-                </h2>
-                <h3 className="text-2xl font-semibold text-blue-600 mb-4">
-                  with Hassle-Free Document Management
-                </h3>
-              </div>
-              
-              <p className="text-xl text-gray-600 leading-relaxed">
-                An easy-to-use interface for generating, managing, and sharing various types of documents, including those that are customizable with QR code scanning capabilities.
-              </p>
-              
-              <p className="text-gray-600 leading-relaxed">
-                With BTNT Smart Doc, businesses can rest assured that their documents are always accessible and tamper-proof, ensuring data security and integrity.
-              </p>
+              Explore BTNT Docs <ArrowRight className="ml-2 h-5 w-5" />
+            </Link>
+          </motion.div>
 
-              <div className="space-y-4">
-                {['Blockchain-secured documents', 'QR code integration', 'Real-time collaboration', 'Automated workflows'].map((feature, index) => (
-                  <motion.div
-                    key={feature}
-                    initial={{ opacity: 0, x: -20 }}
-                    whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ duration: 0.5, delay: index * 0.1 }}
-                    className="flex items-center space-x-3"
-                  >
-                    <CheckCircle className="h-5 w-5 text-green-600" />
-                    <span className="text-gray-700 font-medium">{feature}</span>
-                  </motion.div>
-                ))}
-              </div>
-
-              <Link
-                href="#documents"
-                className="inline-flex items-center bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 transform hover:scale-105"
-              >
-                <span>BTNT-Docs</span>
-                <ArrowRight className="h-5 w-5 ml-2" />
-              </Link>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, x: 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
-              className="relative"
-            >
+          {/* Image Panel */}
+          <motion.div
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.8 }}
+            className="relative"
+          >
+            <div className="relative rounded-3xl overflow-hidden shadow-2xl transition-all hover:scale-[1.02]">
               <img
                 src="https://images.pexels.com/photos/3183153/pexels-photo-3183153.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
-                alt="Document management interface"
-                className="w-full h-96 object-cover rounded-2xl shadow-2xl"
+                alt="BTNT dashboard"
+                className="w-full h-[400px] object-cover rounded-3xl"
               />
-              <div className="absolute -bottom-8 -left-8 bg-blue-600 text-white p-6 rounded-xl shadow-2xl">
-                <Award className="h-8 w-8 mb-2" />
-                <div className="text-sm font-semibold">Verified & Secure</div>
-              </div>
-            </motion.div>
-          </div>
+              <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent rounded-3xl" />
+            </div>
+
+            {/* Floating Badge */}
+            <div className="absolute -bottom-10 -left-10 bg-blue-600/80 text-white px-6 py-4 rounded-2xl shadow-xl backdrop-blur-md border border-white/10">
+              <Award className="h-8 w-8 mb-1" />
+              <p className="text-sm font-semibold">Verified & Compliant</p>
+            </div>
+          </motion.div>
         </div>
-      </section>
-    );
+      </div>
+    </section>
+  );
 }

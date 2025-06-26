@@ -4,6 +4,7 @@ import Hero from "./Hero";
 import Solutions from "./Solutions";
 import Documents from "./Documents";
 import Benefits from "./Benefits";
+import Dashboard from "./Dashboard";
 
 export default function Services() {
   return (
@@ -13,6 +14,7 @@ export default function Services() {
       <Solutions/>
       <Documents/>
       <Benefits/>
+      <Dashboard/>
       <Footer />
     </section>
   );

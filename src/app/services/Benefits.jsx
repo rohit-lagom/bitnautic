@@ -33,7 +33,7 @@ export default function Benefits() {
 
     return (
         <section className="py-20 bg-gradient-to-br from-white via-slate-100 to-white">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto px-6">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}
                     whileInView={{ opacity: 1, y: 0 }}

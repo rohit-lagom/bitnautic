@@ -4,7 +4,7 @@ import {Target} from 'lucide-react';
 const Mission = () => {
   return (
       
-      <section className="py-20 bg-gray-50">
+      <section className="py-20 bg-gradient-to-br from-blue-200 via-blue-50 to-blue-100">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div

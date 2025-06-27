@@ -5,36 +5,52 @@ import { Building2, ArrowRight } from 'lucide-react';
 
 export default function CTA() {
   return (
-    <section className="py-20 bg-blue-600 relative overflow-hidden">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600 to-blue-800"></div>
-      <div className="absolute inset-0 shipping-pattern opacity-20"></div>
-      <div className="relative z-10 max-w-4xl mx-auto text-center px-4 sm:px-6 lg:px-8">
+    <section className="relative py-24 bg-gradient-to-br from-blue-950 via-blue-900 to-blue-800 text-white overflow-hidden">
+      {/* Ambient Effects */}
+      <div className="absolute inset-0 bg-blue-900/40 mix-blend-overlay z-0" />
+      <div className="absolute -top-40 -left-40 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[160px]" />
+      <div className="absolute bottom-0 right-0 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[140px]" />
+      <div className="absolute inset-0 shipping-pattern opacity-10 z-0" />
+
+      <div className="relative z-10 max-w-4xl mx-auto text-center px-6">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="text-white space-y-8"
+          className="space-y-8"
         >
-          <Building2 className="h-16 w-16 mx-auto text-blue-300 mb-6" />
-          <h2 className="text-3xl lg:text-5xl font-bold">
+          {/* Floating Icon */}
+          <div className="inline-flex items-center justify-center w-20 h-20 rounded-2xl bg-white/10 backdrop-blur-xl border border-white/10 mx-auto shadow-xl animate-float">
+            <Building2 className="h-10 w-10 text-blue-300" />
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-3xl lg:text-5xl font-bold leading-tight">
             Ready to Transform Your Enterprise?
           </h2>
+
+          {/* Description */}
           <p className="text-xl text-blue-100 max-w-2xl mx-auto">
-            Join leading enterprises worldwide who trust BitNautic for their supply chain management needs.
+            Join leading enterprises worldwide who trust BitNautic for blockchain-powered supply chain transformation.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-8">
+
+          {/* Glassmorphic Buttons */}
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6 pt-6">
             <Link
               href="/contact"
-              className="bg-white text-blue-600 px-8 py-4 rounded-xl font-semibold text-lg hover:bg-gray-100 transition-all duration-300 flex items-center space-x-2 shadow-2xl transform hover:scale-105"
+              className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-xl font-semibold text-lg shadow-lg hover:bg-white/20 hover:text-white transition-all duration-300 transform hover:scale-105"
             >
-              <span>Schedule Demo</span>
-              <ArrowRight className="h-5 w-5" />
+              <span className="flex items-center gap-2">
+                Schedule Demo <ArrowRight className="h-5 w-5" />
+              </span>
             </Link>
             <Link
               href="/services"
-              className="border-2 border-white text-white px-8 py-4 rounded-xl font-semibold text-lg hover:bg-white hover:text-blue-600 transition-all duration-300 transform hover:scale-105"
+              className="px-8 py-4 bg-white/10 backdrop-blur-md border border-white/10 text-white rounded-xl font-semibold text-lg shadow-lg hover:bg-white/20 hover:text-white transition-all duration-300 transform hover:scale-105"
             >
-              Explore Services
+              <span className="flex items-center gap-2">
+                Explore Services <ArrowRight className="h-5 w-5" />
+              </span>
             </Link>
           </div>
         </motion.div>

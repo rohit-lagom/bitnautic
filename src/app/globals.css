@@ -294,3 +294,11 @@ a:focus-visible {
   border-color: rgba(59, 130, 246, 0.5);
   box-shadow: 0 8px 24px rgba(59, 130, 246, 0.2);
 }
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-6px); }
+}
+.animate-float {
+  animation: float 4s ease-in-out infinite;
+}

@@ -32,7 +32,7 @@ export default function Dashboard() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.4 }}
-                className="absolute bottom-6 right-6 bg-white/10 border border-white/20 backdrop-blur-xl text-white px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3 animate-pulse hover:scale-105 transition-all duration-300"
+                className="absolute bottom-6 right-6 bg-white/10 border border-white/20 backdrop-blur-xl text-white px-5 py-4 rounded-xl shadow-2xl flex items-center gap-3  hover:scale-105 transition-all duration-300"
               >
                 <BarChart3 className="h-6 w-6 text-blue-400" />
                 <div className="text-sm font-semibold text-blue-100">

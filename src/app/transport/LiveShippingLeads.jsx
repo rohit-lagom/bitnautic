@@ -97,8 +97,8 @@ export default function LiveShippingLeads() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 className={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 text-sm md:text-base ${selectedTab === tab
-                  ? 'bg-blue-600 text-white shadow-lg'
-                  : 'text-blue-100 hover:text-white hover:bg-blue-600/20'
+                    ? 'bg-white/10 text-white border border-white/20 backdrop-blur-md shadow-lg'
+                    : 'text-blue-100 hover:text-white hover:bg-white/5 hover:border-white/10 hover:backdrop-blur'
                   }`}
               >
                 {tab === 'LCL' ? (

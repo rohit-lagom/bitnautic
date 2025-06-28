@@ -9,11 +9,11 @@ export default function LiveShippingLeads() {
   const shippingLeads = {
     LCL: [
       { from: 'London', to: 'Abashiri Ko (Japan)', days: 3 },
-      { from: 'Londonderry', to: 'Aeroskobing (Denmark)', days: 15 },
       { from: 'Ballina (Australia)', to: 'Aasiaat (Greenland)', days: 9 },
       { from: 'Calcutta (India)', to: 'Kobenhavn (Denmark)', days: 10 },
       { from: 'Dublin (Ireland)', to: 'Anyer Lor (Indonesia)', days: 6 },
       { from: 'Dublin (Ireland)', to: 'Ballina (Australia)', days: 8 },
+      { from: 'Akrahamn (Norway)', to: 'Algeciras (Spain)', days: 5 },
     ],
     FCL: [
       { from: 'Bedi (India)', to: 'Belekeri (India)', days: 19 },
@@ -48,6 +48,8 @@ export default function LiveShippingLeads() {
       Norway: 'no',
       Sweden: 'se',
       Indonesia: 'id',
+            'United Kingdom': 'gb',
+      UK: 'gb',
     };
 
     const match = Object.entries(countryMap).find(([name]) =>

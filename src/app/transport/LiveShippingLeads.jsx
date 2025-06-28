@@ -21,14 +21,14 @@ export default function LiveShippingLeads() {
       { from: 'Brevik (Norway)', to: 'Beypore (India)', days: 20 },
       { from: 'Akrahamn (Norway)', to: 'Algeciras (Spain)', days: 5 },
       { from: 'Bergkvara (Sweden)', to: 'Ballina (Australia)', days: 9 },
-      { from: 'Bristol (United States)', to: 'Belekeri (India)', days: 12 },
+      { from: 'Bristol (UnitedStates)', to: 'Belekeri (India)', days: 12 },
     ],
     Bulk: [
       { from: 'Algeciras (Spain)', to: 'Calcutta (India)', days: 14 },
       { from: 'Bahia Harris (Chile)', to: 'Dublin (Ireland)', days: 25 },
-      { from: 'Algoma (United States)', to: 'Beypore (India)', days: 30 },
-      { from: 'Kiel (Germany)', to: 'Algoma (United States)', days: 13 },
-      { from: 'Berkeley (United States)', to: 'Kobenhavn (Denmark)', days: 3 },
+      { from: 'Algoma (UnitedStates)', to: 'Beypore (India)', days: 30 },
+      { from: 'Kiel (Germany)', to: 'Algoma (UnitedStates)', days: 13 },
+      { from: 'Berkeley (UnitedStates)', to: 'Kobenhavn (Denmark)', days: 3 },
       { from: 'Bedi (India)', to: 'Kobenhavn (Denmark)', days: 8 },
     ],
   };
@@ -48,14 +48,22 @@ export default function LiveShippingLeads() {
       Norway: 'no',
       Sweden: 'se',
       Indonesia: 'id',
-            'United Kingdom': 'gb',
+      'United Kingdom': 'gb',
       UK: 'gb',
     };
 
+    const lowercasePort = port.toLowerCase();
+
+    // Special case: London
+    if (lowercasePort.includes('london')) {
+      return `https://flagcdn.com/24x18/gb.png`;
+    }
+
     const match = Object.entries(countryMap).find(([name]) =>
-      port.toLowerCase().includes(name.toLowerCase())
+      lowercasePort.includes(name.toLowerCase())
     );
-    return `https://flagcdn.com/24x18/${match ? match[1] : 'un'}.png`;
+
+    return `https://flagcdn.com/24x18/${match ? match[1] : 'us'}.png`;
   };
 
   return (

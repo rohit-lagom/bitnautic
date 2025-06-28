@@ -21,14 +21,14 @@ export default function LiveShippingLeads() {
       { from: 'Brevik (Norway)', to: 'Beypore (India)', days: 20 },
       { from: 'Akrahamn (Norway)', to: 'Algeciras (Spain)', days: 5 },
       { from: 'Bergkvara (Sweden)', to: 'Ballina (Australia)', days: 9 },
-      { from: 'Bristol (UnitedStates)', to: 'Belekeri (India)', days: 12 },
+      { from: 'Bristol (United States)', to: 'Belekeri (India)', days: 12 },
     ],
     Bulk: [
       { from: 'Algeciras (Spain)', to: 'Calcutta (India)', days: 14 },
       { from: 'Bahia Harris (Chile)', to: 'Dublin (Ireland)', days: 25 },
-      { from: 'Algoma (UnitedStates)', to: 'Beypore (India)', days: 30 },
-      { from: 'Kiel (Germany)', to: 'Algoma (UnitedStates)', days: 13 },
-      { from: 'Berkeley (UnitedStates)', to: 'Kobenhavn (Denmark)', days: 3 },
+      { from: 'Algoma (United States)', to: 'Beypore (India)', days: 30 },
+      { from: 'Kiel (Germany)', to: 'Algoma (United States)', days: 13 },
+      { from: 'Berkeley (United States)', to: 'Kobenhavn (Denmark)', days: 3 },
       { from: 'Bedi (India)', to: 'Kobenhavn (Denmark)', days: 8 },
     ],
   };
@@ -43,7 +43,7 @@ export default function LiveShippingLeads() {
       Ireland: 'ie',
       Spain: 'es',
       Chile: 'cl',
-      UnitedStates: 'us',
+      'United States': 'us',
       Germany: 'de',
       Norway: 'no',
       Sweden: 'se',
@@ -54,7 +54,6 @@ export default function LiveShippingLeads() {
 
     const lowercasePort = port.toLowerCase();
 
-    // Special case: London
     if (lowercasePort.includes('london')) {
       return `https://flagcdn.com/24x18/gb.png`;
     }
@@ -63,7 +62,7 @@ export default function LiveShippingLeads() {
       lowercasePort.includes(name.toLowerCase())
     );
 
-    return `https://flagcdn.com/24x18/${match ? match[1] : 'us'}.png`;
+    return `https://flagcdn.com/24x18/${match ? match[1] : 'un'}.png`;
   };
 
   return (
@@ -91,17 +90,28 @@ export default function LiveShippingLeads() {
               <button
                 key={tab}
                 onClick={() => setSelectedTab(tab)}
-                className={`px-6 py-3 rounded-lg font-semibold transition-all duration-300 ${
+                className={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-all duration-300 text-sm md:text-base ${
                   selectedTab === tab
                     ? 'bg-blue-600 text-white shadow-lg'
                     : 'text-blue-100 hover:text-white hover:bg-blue-600/20'
                 }`}
               >
-                {tab === 'LCL'
-                  ? 'Less Container Load'
-                  : tab === 'FCL'
-                  ? 'Full Container Load'
-                  : 'In Bulk'}
+                {tab === 'LCL' ? (
+                  <>
+                    <span className="block md:hidden">LCL</span>
+                    <span className="hidden md:block">Less Container Load</span>
+                  </>
+                ) : tab === 'FCL' ? (
+                  <>
+                    <span className="block md:hidden">FCL</span>
+                    <span className="hidden md:block">Full Container Load</span>
+                  </>
+                ) : (
+                  <>
+                    <span className="block md:hidden">Bulk</span>
+                    <span className="hidden md:block">In Bulk</span>
+                  </>
+                )}
               </button>
             ))}
           </div>

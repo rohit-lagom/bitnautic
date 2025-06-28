@@ -84,17 +84,22 @@ export default function LiveShippingLeads() {
         </motion.div>
 
         {/* Tab Switch */}
-        <div className="flex justify-center mb-12">
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="flex justify-center mb-12">
           <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-xl p-2 shadow-lg flex gap-2">
             {['LCL', 'FCL', 'Bulk'].map((tab) => (
-              <button
+              <motion.button
                 key={tab}
                 onClick={() => setSelectedTab(tab)}
-                className={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold transition-all duration-300 text-sm md:text-base ${
-                  selectedTab === tab
-                    ? 'bg-blue-600 text-white shadow-lg'
-                    : 'text-blue-100 hover:text-white hover:bg-blue-600/20'
-                }`}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-4 py-2 md:px-6 md:py-3 rounded-lg font-semibold cursor-pointer transition-all duration-300 text-sm md:text-base ${selectedTab === tab
+                  ? 'bg-blue-600 text-white shadow-lg'
+                  : 'text-blue-100 hover:text-white hover:bg-blue-600/20'
+                  }`}
               >
                 {tab === 'LCL' ? (
                   <>
@@ -112,10 +117,11 @@ export default function LiveShippingLeads() {
                     <span className="hidden md:block">In Bulk</span>
                   </>
                 )}
-              </button>
+              </motion.button>
+
             ))}
           </div>
-        </div>
+        </motion.div>
 
         {/* Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
